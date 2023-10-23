@@ -6,9 +6,9 @@ import morgan from 'morgan'
 import cors from 'cors'
 import helmet from 'helmet'
 
-import logger from './utils/logger'
+import logger from './helpers/logger'
 import router from './routes'
-import { notFound, errorHandler } from './utils/errors'
+import { notFound, errorHandler } from './helpers/errors'
 
 const port = Number(process.env.PORT)
 
