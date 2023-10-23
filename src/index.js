@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import './helpers/dotenv'
 
 import express from 'express'
