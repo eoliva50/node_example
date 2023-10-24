@@ -1,6 +1,14 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import pino from 'pino'
+const pino = require('pino')
+const logger = pino({
+  transport: {
+    target: 'pino-pretty',
+    options: {
+      colorize: true
+    }
+  }
+})
 
-const logger = pino({ prettyPrint: { colorize: true } })
+logger.info('hi')
 
 export default logger
