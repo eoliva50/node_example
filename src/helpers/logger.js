@@ -1,14 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const pino = require('pino')
-const logger = pino({
-  transport: {
-    target: 'pino-pretty',
-    options: {
-      colorize: true
-    }
-  }
-})
+import consola from 'consola'
 
-logger.info('hi')
+const logger = consola
 
 export default logger
