@@ -5,6 +5,7 @@ import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
 import helmet from 'helmet'
+import bodyParser from 'body-parser'
 
 import logger from './helpers/logger'
 import router from './routes'
@@ -15,8 +16,14 @@ const port = Number(process.env.PORT)
 const app = express()
 
 app.use(morgan(process.env.MORGAN_LOG))
-app.use(cors({ origin: process.env.CORS_ORIGIN }))
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    exposedHeaders: ['x-total-count', 'x-total-pages'],
+  }),
+)
 app.use(helmet())
+app.use(bodyParser.json())
 
 app.use('/', router)
 
